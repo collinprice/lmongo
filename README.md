@@ -327,6 +327,14 @@ LMongo::collection('users')->increment('votes');
 LMongo::collection('users')->decrement('votes');
 ```
 
+**Updating A Document Based On An _id**
+```php
+$id = new MongoID('51b787d734c0d8280651fe75');
+LMongo::collection('users')
+            ->where('_id', $id)
+            ->update(array('votes' => 2));
+```
+
 Deletes
 -------
 
